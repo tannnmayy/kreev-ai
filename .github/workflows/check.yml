@@ -1,0 +1,15 @@
+name: Reproduce on a clean machine
+
+on:
+  push:
+  pull_request:
+  workflow_dispatch:
+
+jobs:
+  check:
+    runs-on: ubuntu-latest
+    timeout-minutes: 25
+    steps:
+      - uses: actions/checkout@v4
+      - name: The one command, on a clean machine
+        run: docker compose up --build --exit-code-from check

@@ -1,0 +1,127 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Ala · voice market</title>
+<meta name="theme-color" content="#008060">
+<link rel="manifest" href="manifest.webmanifest">
+<link rel="icon" href="icons/icon.svg" type="image/svg+xml">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Noto+Sans+Telugu:wght@400;500;600&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+<section id="start" class="start" aria-labelledby="start-title">
+  <div class="start-card">
+    <div class="brand"><span class="brand-mark" aria-hidden="true"></span><h1 id="start-title">Ala <span class="te">అల</span></h1></div>
+    <p class="lede">Your voice market for the Andhra coast. Talk in Telugu, English, or both.</p>
+    <label class="field"><span>Your first name <span class="muted">(optional, so Ala can remember you)</span></span>
+      <input id="name" type="text" maxlength="40" autocomplete="given-name" placeholder="Ravi"></label>
+    <label class="field" id="invite-field" hidden><span>Invite code</span>
+      <input id="invite" type="text" maxlength="40" autocomplete="off"></label>
+    <button id="talk" class="primary">Tap to talk</button>
+    <button id="type-only" class="link">Type instead</button>
+    <p id="start-error" class="error" role="alert" hidden></p>
+    <ul class="notes">
+      <li>Headphones help: Ala won't hear itself.</li>
+      <li>This demo uses free AI services that may keep what you say, so please don't share personal details. Delivery and payment here are pretend.</li>
+    </ul>
+  </div>
+</section>
+
+<main id="shop" class="shop" hidden>
+  <header class="bar">
+    <div class="bar-brand"><span class="brand-mark small" aria-hidden="true"></span><strong>Ala</strong><span class="muted bar-sub">coastal voice market</span></div>
+    <div class="bar-actions">
+      <span id="lang" class="chip" title="Language Ala is speaking">te · en</span>
+      <button id="panel-toggle" class="chip button" aria-pressed="false">What Ala hears</button>
+    </div>
+  </header>
+
+  <div class="grid">
+    <section class="col convo" aria-label="Conversation">
+      <h2>Conversation</h2>
+      <div id="captions" class="captions" aria-live="polite"></div>
+      <form id="typed" class="typed">
+        <input id="typed-text" type="text" autocomplete="off" placeholder="Type to Ala" aria-label="Type to Ala">
+        <button class="ghost" type="submit">Send</button>
+      </form>
+    </section>
+
+    <section class="col centre" aria-label="Ala">
+      <div id="wake" class="wake" hidden><div class="wake-bar"><span></span></div><p>Waking Ala, about 15 seconds</p></div>
+      <button id="orb" class="orb idle" aria-label="Microphone on. Tap to mute."><span id="orb-ring" class="orb-ring"></span><span id="orb-core" class="orb-core"><span id="orb-label">connecting</span></span></button>
+      <p id="hint" class="hint">Talk over Ala any time to interrupt.</p>
+      <div id="cards" class="cards" aria-label="Products"></div>
+      <div class="tools">
+        <button id="test-card" class="ghost small">Test card</button>
+        <button id="flag" class="ghost small">Flag this moment</button>
+        <label class="switch small"><input id="seller" type="checkbox"><span>Seller view</span></label>
+        <button id="end" class="ghost small danger">End call</button>
+      </div>
+    </section>
+
+    <section class="col cart" aria-label="Cart">
+      <h2>Cart</h2>
+      <ul id="cart-lines" class="lines"></ul>
+      <p id="cart-empty" class="muted">Nothing yet. Ask for something.</p>
+      <div class="total"><span>Total</span><strong id="total">₹0</strong></div>
+      <div id="budget" class="budget" hidden>
+        <div class="budget-track"><span id="budget-fill"></span></div>
+        <p id="budget-text" class="muted small"></p>
+      </div>
+      <p id="added" class="added" hidden></p>
+      <ul id="orders" class="orders"></ul>
+      <button id="review" class="primary" disabled>Review order</button>
+    </section>
+  </div>
+
+  <aside id="panel" class="panel" hidden aria-label="What Ala hears">
+    <div class="panel-grid">
+      <div><h3>Voice</h3>
+        <div class="meter"><span id="meter-fill"></span></div>
+        <dl class="stats">
+          <div><dt>Level</dt><dd id="s-level">–</dd></div>
+          <div><dt>Pitch</dt><dd id="s-pitch">–</dd></div>
+          <div><dt>Sounds finished</dt><dd id="s-end">–</dd></div>
+          <div><dt>Waiting for</dt><dd id="s-hold">–</dd></div>
+          <div><dt>Tone</dt><dd id="s-tone">calm</dd></div>
+        </dl>
+      </div>
+      <div><h3>Why Ala did that</h3><ol id="decisions" class="decisions"></ol></div>
+      <div><h3>Who answered</h3><ol id="routes" class="decisions"></ol></div>
+    </div>
+  </aside>
+</main>
+
+<dialog id="sheet" class="sheet" aria-labelledby="sheet-title">
+  <h2 id="sheet-title">Your order</h2>
+  <p id="sheet-text"></p>
+  <div class="sheet-actions">
+    <button id="sheet-yes" class="primary">Yes, place order</button>
+    <button id="sheet-no" class="ghost">Change something</button>
+  </div>
+</dialog>
+
+<dialog id="card-dialog" class="sheet" aria-labelledby="card-title">
+  <p class="eyebrow" id="card-family"></p>
+  <h2 id="card-title">Test card</h2>
+  <p id="card-text"></p>
+  <p class="muted small" id="card-expect"></p>
+  <div class="sheet-actions"><button id="card-next" class="ghost">Another</button><button id="card-close" class="primary">Got it</button></div>
+</dialog>
+
+<dialog id="flag-dialog" class="sheet" aria-labelledby="flag-title">
+  <h2 id="flag-title">What felt wrong?</h2>
+  <p class="muted small">The last minute of this call is saved with your note.</p>
+  <textarea id="flag-note" rows="3" maxlength="500"></textarea>
+  <div class="sheet-actions"><button id="flag-send" class="primary">Save</button><button id="flag-cancel" class="ghost">Cancel</button></div>
+</dialog>
+
+<audio id="voice" autoplay playsinline></audio>
+<script type="module" src="app.js"></script>
+</body>
+</html>

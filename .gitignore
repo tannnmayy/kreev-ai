@@ -1,0 +1,25 @@
+.venv/
+__pycache__/
+*.pyc
+.pytest_cache/
+.env
+.env.local
+.env.*.local
+*.sqlite
+*.sqlite3
+data/*.db
+reports/live/
+traces/
+models/
+node_modules/
+.vercel/
+.DS_Store
+.tools/
+.claude/
+clips/*.wav
+clips/*.mp3
+clips/*.m4a
+
+# SQLite keeps call data in these side files too
+*.sqlite-wal
+*.sqlite-shm

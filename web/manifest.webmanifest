@@ -1,0 +1,10 @@
+{
+  "name": "Ala, coastal voice market",
+  "short_name": "Ala",
+  "description": "Shop by voice, in Telugu or English.",
+  "start_url": ".",
+  "display": "standalone",
+  "background_color": "#f1f1f1",
+  "theme_color": "#008060",
+  "icons": [{"src": "icons/icon.svg", "sizes": "any", "type": "image/svg+xml", "purpose": "any"}]
+}

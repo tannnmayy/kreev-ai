@@ -1,0 +1,12 @@
+{
+  "name": "ala-web",
+  "private": true,
+  "type": "module",
+  "description": "The serverless half of Ala on Vercel: room tokens, wake-up and health.",
+  "dependencies": {
+    "livekit-server-sdk": "2.19.2"
+  },
+  "engines": {
+    "node": "22.x"
+  }
+}

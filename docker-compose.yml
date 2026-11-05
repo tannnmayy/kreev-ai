@@ -1,0 +1,59 @@
+# The whole of Ala on one machine, with one command:
+#
+#     docker compose up
+#
+# then open http://localhost:8787. No keys are needed to start. Free keys in .env.local turn on the voice and the models.
+#
+# The agent and the page share the LiveKit container's network. WebRTC advertises one address to everyone, and 127.0.0.1 is
+# only right for all three parties if the agent is "inside" the same localhost as the server and the browser reaches it through
+# published ports. This works the same on Linux, macOS and Windows.
+name: ala
+
+x-app: &app
+  build: .
+  network_mode: "service:livekit"
+  depends_on: [livekit]
+  restart: unless-stopped
+  env_file:
+    - path: .env.local
+      required: false
+  volumes:
+    - ala-data:/app/data
+    - ./reports:/app/reports
+
+services:
+  livekit:
+    image: livekit/livekit-server:v1.13.11
+    command: --dev --bind 0.0.0.0 --node-ip 127.0.0.1
+    restart: unless-stopped
+    ports:
+      - "7880:7880"
+      - "7881:7881"
+      - "7882:7882/udp"
+      - "8787:8787"
+
+  agent:
+    <<: *app
+    command: python -m ala.voice.agent start
+    environment: &local
+      LIVEKIT_URL: ws://localhost:7880
+      LIVEKIT_API_KEY: devkey
+      LIVEKIT_API_SECRET: secret
+      ALA_TRACE_DIR: /app/data/traces
+
+  web:
+    <<: *app
+    command: python -m ala.web.server
+    environment: *local
+
+  # Runs once at start-up: every test, the real-life deck, and a real call through the running stack. Its last line says
+  # whether this machine reproduced the project.
+  check:
+    <<: *app
+    restart: "no"
+    command: python -m ala.bench.check
+    depends_on: [livekit, agent, web]
+    environment: *local
+
+volumes:
+  ala-data:

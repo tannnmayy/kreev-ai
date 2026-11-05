@@ -1,0 +1,263 @@
+# The demo shop: a coastal Andhra fish market plus everyday groceries and a small festival shelf.
+# Prices are rupees per unit. `stock` is what the sellers have today, in that unit.
+# Names and aliases in Telugu are for native review. Aliases are what customers and speech recognisers
+# actually produce, in Telugu script, English and Latin-letter Telugu.
+sellers: [Bheemili, Uppada, Kakinada, Machilipatnam, Nizampatnam, Vodarevu]
+
+shop:
+  delivery_en: tomorrow morning, between 7 and 9
+  delivery_te: రేపు ఉదయం ఏడు నుంచి తొమ్మిది మధ్య
+  payment_en: cash on delivery
+  payment_te: డెలివరీ అప్పుడు క్యాష్
+  delivery_fee: 0
+  returns_en: If something isn't fresh when it arrives, the seller replaces it free.
+  returns_te: వచ్చినప్పుడు తాజాగా లేకపోతే, అమ్మకందారు ఉచితంగా మార్చి ఇస్తారు.
+
+products:
+  # --- fresh sea fish ----------------------------------------------------------------------------------------
+  - {sku: vanjaram, en: seer fish, te: వంజరం, cat: fish, unit: kg, price: 900, stock: 14, group: big-sea-fish, seller: Bheemili,
+     tags: [non-veg, few-bones, fry, curry, premium], cuts: [whole, cleaned, steaks],
+     aliases: [vanjaram, vanjiram, seer, seer fish, king fish, kingfish, surmai, వంజరం, వంజిరం, వంజరము],
+     note_en: "firm, few bones", note_te: "ముల్లు తక్కువ"}
+  - {sku: chanduva, en: white pomfret, te: చందువా, cat: fish, unit: kg, price: 780, stock: 10, group: big-sea-fish, seller: Kakinada,
+     tags: [non-veg, few-bones, fry, curry, premium], cuts: [whole, cleaned, curry cut],
+     aliases: [chanduva, chandhuva, chanduvva, pomfret, white pomfret, paplet, చందువా, చందువ, తెల్ల చందువా],
+     note_en: "soft, mild", note_te: "మెత్తగా ఉంటుంది"}
+  - {sku: nalla-chanduva, en: black pomfret, te: నల్ల చందువా, cat: fish, unit: kg, price: 620, stock: 8, group: big-sea-fish, seller: Kakinada,
+     tags: [non-veg, few-bones, fry, curry], cuts: [whole, cleaned, curry cut],
+     aliases: [black pomfret, nalla chanduva, నల్ల చందువా], note_en: "richer taste", note_te: "రుచి ఎక్కువ"}
+  - {sku: red-snapper, en: red snapper, te: రెడ్ స్నాపర్, cat: fish, unit: kg, price: 640, stock: 6, group: big-sea-fish, seller: Machilipatnam,
+     tags: [non-veg, few-bones, curry, fry], cuts: [whole, cleaned, steaks],
+     aliases: [red snapper, snapper, రెడ్ స్నాపర్], note_en: "firm white flesh", note_te: "గట్టి తెల్ల మాంసం"}
+  - {sku: pandugappa, en: barramundi, te: పండుగప్ప, cat: fish, unit: kg, price: 720, stock: 5, group: big-sea-fish, seller: Nizampatnam,
+     tags: [non-veg, few-bones, curry, fry], cuts: [whole, cleaned, steaks],
+     aliases: [barramundi, pandugappa, panduga kappa, పండుగప్ప, పండుగొప్ప], note_en: "buttery, few bones", note_te: "ముల్లు తక్కువ"}
+  - {sku: pulasa, en: hilsa, te: పులస, cat: fish, unit: kg, price: 3200, stock: 0, group: big-sea-fish, seller: Uppada,
+     tags: [non-veg, bony, curry, premium], cuts: [whole, curry cut],
+     aliases: [pulasa, pulasa fish, hilsa, ilish, పులస, పులస చేప], note_en: "season is over", note_te: "సీజన్ అయిపోయింది"}
+  - {sku: kanagarthalu, en: mackerel, te: కనగర్తలు, cat: fish, unit: kg, price: 280, stock: 20, group: small-sea-fish, seller: Vodarevu,
+     tags: [non-veg, bony, fry, curry, budget], cuts: [whole, cleaned],
+     aliases: [mackerel, kanagarthalu, kanagartha, kanagarta, కనగర్తలు, కనగర్త, కానగర్తలు], note_en: "oily and rich", note_te: "రుచిగా ఉంటుంది"}
+  - {sku: kavallu, en: sardines, te: కవళ్లు, cat: fish, unit: kg, price: 180, stock: 25, group: small-sea-fish, seller: Vodarevu,
+     tags: [non-veg, bony, fry, curry, budget], cuts: [whole, cleaned],
+     aliases: [sardine, sardines, kavallu, kavalu, కవళ్లు, కవళ్ళు, కవల్లు], note_en: "cheap, many small bones", note_te: "తక్కువ ధర, చిన్న ముల్లులు"}
+  - {sku: nethallu, en: anchovies, te: నెత్తళ్లు, cat: fish, unit: kg, price: 240, stock: 12, group: small-sea-fish, seller: Bheemili,
+     tags: [non-veg, fry, budget], cuts: [whole, cleaned],
+     aliases: [anchovy, anchovies, nethallu, netthallu, నెత్తళ్లు, నెత్తళ్ళు], note_en: "tiny, best fried", note_te: "వేపుడుకి బాగుంటాయి"}
+  - {sku: savallu, en: ribbon fish, te: సావాళ్లు, cat: fish, unit: kg, price: 260, stock: 10, group: small-sea-fish, seller: Bheemili,
+     tags: [non-veg, bony, fry, curry, budget], cuts: [whole, cleaned, curry cut],
+     aliases: [ribbon fish, ribbonfish, savallu, saavallu, సావాళ్లు, సావాళ్ళు, సావాలు], note_en: "long and soft", note_te: "మెత్తగా ఉంటుంది"}
+  # --- shellfish ---------------------------------------------------------------------------------------------
+  - {sku: royyalu, en: prawns, te: రొయ్యలు, cat: fish, unit: kg, price: 700, stock: 20, group: shellfish, seller: Nizampatnam,
+     tags: [non-veg, few-bones, fry, curry, biryani], cuts: [whole, cleaned],
+     aliases: [prawn, prawns, shrimp, shrimps, royyalu, royya, roiyalu, రొయ్యలు, రొయ్యల, రొయ్య], note_en: "medium size", note_te: "మధ్యస్థ సైజు"}
+  - {sku: tiger-royyalu, en: tiger prawns, te: టైగర్ రొయ్యలు, cat: fish, unit: kg, price: 1100, stock: 6, group: shellfish, seller: Nizampatnam,
+     tags: [non-veg, few-bones, fry, premium], cuts: [whole, cleaned],
+     aliases: [tiger prawn, tiger prawns, tiger royyalu, jumbo prawns, టైగర్ రొయ్యలు, పెద్ద రొయ్యలు], note_en: "large and sweet", note_te: "పెద్దవి, తీపిగా ఉంటాయి"}
+  - {sku: peethalu, en: crabs, te: పీతలు, cat: fish, unit: kg, price: 520, stock: 9, group: shellfish, seller: Machilipatnam,
+     tags: [non-veg, curry], cuts: [whole, cleaned],
+     aliases: [crab, crabs, peethalu, peetalu, peetha, పీతలు, పీత, పీతల], note_en: "live mud crabs", note_te: "తాజా పీతలు"}
+  - {sku: squid, en: squid, te: స్క్విడ్, cat: fish, unit: kg, price: 480, stock: 5, group: shellfish, seller: Kakinada,
+     tags: [non-veg, few-bones, fry], cuts: [whole, cleaned],
+     aliases: [squid, calamari, స్క్విడ్], note_en: "tender rings", note_te: "మెత్తని ముక్కలు"}
+  # --- river and pond fish -----------------------------------------------------------------------------------
+  - {sku: seelavathi, en: rohu, te: శీలావతి, cat: fish, unit: kg, price: 240, stock: 18, group: river-fish, seller: Kakinada,
+     tags: [non-veg, bony, curry, budget], cuts: [whole, cleaned, curry cut],
+     aliases: [rohu, seelavathi, silavathi, sheelavathi, శీలావతి, రోహు], note_en: "everyday curry fish", note_te: "రోజూ కూరకి మంచిది"}
+  - {sku: bochche, en: catla, te: బొచ్చె, cat: fish, unit: kg, price: 260, stock: 15, group: river-fish, seller: Kakinada,
+     tags: [non-veg, bony, curry, budget], cuts: [whole, cleaned, curry cut],
+     aliases: [catla, katla, bochche, bocche, bochha, బొచ్చె, బొచ్చ], note_en: "big and meaty", note_te: "పెద్ద ముక్కలు"}
+  - {sku: roopchand, en: roopchand, te: రూప్‌చంద్, cat: fish, unit: kg, price: 220, stock: 12, group: river-fish, seller: Uppada,
+     tags: [non-veg, few-bones, fry, budget], cuts: [whole, cleaned],
+     aliases: [roopchand, rupchand, roop chand, freshwater pomfret, రూప్‌చంద్, రూప్ చంద్], note_en: "few bones, good value", note_te: "ముల్లు తక్కువ, ధర తక్కువ"}
+  - {sku: korameenu, en: murrel, te: కొరమీను, cat: fish, unit: kg, price: 650, stock: 6, group: river-fish, seller: Uppada,
+     tags: [non-veg, few-bones, curry, premium], cuts: [whole, cleaned, curry cut],
+     aliases: [murrel, korameenu, korameen, snakehead, కొరమీను, కొర్రమీను, కొరమీన], note_en: "prized for curry", note_te: "పులుసుకి శ్రేష్ఠం"}
+  # --- dry fish and pickles ----------------------------------------------------------------------------------
+  - {sku: endu-royyalu, en: dried prawns, te: ఎండు రొయ్యలు, cat: dry-fish, unit: pack, price: 280, stock: 30, group: dry-fish, seller: Vodarevu,
+     tags: [non-veg, pantry], aliases: [dried prawns, dry prawns, endu royyalu, ఎండు రొయ్యలు], note_en: "200 gram pack", note_te: "రెండు వందల గ్రాముల ప్యాకెట్"}
+  - {sku: endu-chepalu, en: dried fish, te: ఎండు చేపలు, cat: dry-fish, unit: pack, price: 160, stock: 30, group: dry-fish, seller: Vodarevu,
+     tags: [non-veg, pantry, budget], aliases: [dried fish, dry fish, endu chepalu, ఎండు చేపలు, ఎండు చేప], note_en: "200 gram pack", note_te: "రెండు వందల గ్రాముల ప్యాకెట్"}
+  - {sku: endu-nethallu, en: dried anchovies, te: ఎండు నెత్తళ్లు, cat: dry-fish, unit: pack, price: 180, stock: 25, group: dry-fish, seller: Bheemili,
+     tags: [non-veg, pantry], aliases: [dried anchovies, dry anchovies, endu nethallu, ఎండు నెత్తళ్లు, ఎండు నెత్తళ్ళు], note_en: "200 gram pack", note_te: "రెండు వందల గ్రాముల ప్యాకెట్"}
+  - {sku: royyala-pachadi, en: prawn pickle, te: రొయ్యల పచ్చడి, cat: pickle, unit: pack, price: 320, stock: 20, group: pickle, seller: Nizampatnam,
+     tags: [non-veg, pantry], aliases: [prawn pickle, royyala pachadi, రొయ్యల పచ్చడి, రొయ్యల ఊరగాయ], note_en: "250 gram jar", note_te: "రెండు వందల యాభై గ్రాముల సీసా"}
+  - {sku: chepala-pachadi, en: fish pickle, te: చేపల పచ్చడి, cat: pickle, unit: pack, price: 280, stock: 20, group: pickle, seller: Bheemili,
+     tags: [non-veg, pantry], aliases: [fish pickle, chepala pachadi, చేపల పచ్చడి, చేపల ఊరగాయ], note_en: "250 gram jar", note_te: "రెండు వందల యాభై గ్రాముల సీసా"}
+  - {sku: gongura-pachadi, en: gongura pickle, te: గోంగూర పచ్చడి, cat: pickle, unit: pack, price: 180, stock: 25, group: pickle, seller: Kakinada,
+     tags: [veg, pantry], aliases: [gongura pickle, gongura pachadi, గోంగూర పచ్చడి], note_en: "250 gram jar", note_te: "రెండు వందల యాభై గ్రాముల సీసా"}
+  - {sku: avakaya, en: mango pickle, te: ఆవకాయ, cat: pickle, unit: pack, price: 200, stock: 25, group: pickle, seller: Kakinada,
+     tags: [veg, pantry], aliases: [mango pickle, avakaya, aavakaya, ఆవకాయ, మామిడి పచ్చడి], note_en: "250 gram jar", note_te: "రెండు వందల యాభై గ్రాముల సీసా"}
+  # --- meat and eggs -----------------------------------------------------------------------------------------
+  - {sku: chicken, en: chicken, te: చికెన్, cat: meat, unit: kg, price: 260, stock: 30, group: meat, seller: Machilipatnam,
+     tags: [non-veg, curry, biryani, fry], cuts: [curry cut, boneless],
+     aliases: [chicken, kodi, kodi mamsam, చికెన్, కోడి, కోడి మాంసం], note_en: "fresh today", note_te: "ఈ రోజు తాజా"}
+  - {sku: mutton, en: mutton, te: మటన్, cat: meat, unit: kg, price: 850, stock: 12, group: meat, seller: Machilipatnam,
+     tags: [non-veg, curry, biryani, premium], cuts: [curry cut],
+     aliases: [mutton, goat, mamsam, మటన్, మేక మాంసం, మాంసం], note_en: "fresh today", note_te: "ఈ రోజు తాజా"}
+  - {sku: eggs, en: eggs, te: కోడిగుడ్లు, cat: meat, unit: dozen, price: 84, stock: 40, step: 0.5, group: eggs, seller: Machilipatnam,
+     tags: [egg, pantry, budget], aliases: [egg, eggs, guddu, gudlu, kodi guddu, కోడిగుడ్లు, గుడ్లు, గుడ్డు, కోడిగుడ్డు], note_en: "farm eggs", note_te: "నాటు కాదు, ఫారం గుడ్లు"}
+  # --- rice, grains, pulses ----------------------------------------------------------------------------------
+  - {sku: sona-masuri, en: sona masuri rice, te: సోనా మసూరి బియ్యం, cat: grocery, unit: kg, price: 62, stock: 200, step: 1, group: rice, seller: Kakinada,
+     tags: [veg, staple], aliases: [rice, sona masuri, sona masoori, biyyam, బియ్యం, సోనా మసూరి, సన్న బియ్యం], note_en: "everyday rice", note_te: "రోజూ వాడే బియ్యం"}
+  - {sku: basmati, en: basmati rice, te: బాస్మతి బియ్యం, cat: grocery, unit: kg, price: 120, stock: 80, step: 1, group: rice, seller: Kakinada,
+     tags: [veg, staple, biryani], aliases: [basmati, basmati rice, biryani rice, బాస్మతి, బాస్మతి బియ్యం], note_en: "long grain", note_te: "పొడవు బియ్యం"}
+  - {sku: kandi-pappu, en: toor dal, te: కంది పప్పు, cat: grocery, unit: kg, price: 160, stock: 80, step: 0.5, group: dal, seller: Kakinada,
+     tags: [veg, staple], aliases: [toor dal, tur dal, arhar dal, dal, kandi pappu, kandipappu, pappu, కంది పప్పు, కందిపప్పు, పప్పు], note_en: "for pappu and sambar", note_te: "పప్పుకి, సాంబారుకి"}
+  - {sku: pesara-pappu, en: moong dal, te: పెసర పప్పు, cat: grocery, unit: kg, price: 140, stock: 60, step: 0.5, group: dal, seller: Kakinada,
+     tags: [veg, staple], aliases: [moong dal, mung dal, pesara pappu, pesarapappu, పెసర పప్పు, పెసరపప్పు], note_en: "light on the stomach", note_te: "తేలికగా ఉంటుంది"}
+  - {sku: senaga-pappu, en: chana dal, te: శనగ పప్పు, cat: grocery, unit: kg, price: 110, stock: 60, step: 0.5, group: dal, seller: Kakinada,
+     tags: [veg, staple], aliases: [chana dal, bengal gram, senaga pappu, senagapappu, శనగ పప్పు, శనగపప్పు], note_en: "for tempering", note_te: "తాలింపుకి"}
+  - {sku: minapa-pappu, en: urad dal, te: మినప పప్పు, cat: grocery, unit: kg, price: 150, stock: 60, step: 0.5, group: dal, seller: Kakinada,
+     tags: [veg, staple], aliases: [urad dal, minapa pappu, minappappu, మినప పప్పు, మినప్పప్పు], note_en: "for idli and dosa", note_te: "ఇడ్లీ, దోసకి"}
+  - {sku: atta, en: wheat flour, te: గోధుమ పిండి, cat: grocery, unit: kg, price: 55, stock: 80, step: 1, group: flour, seller: Kakinada,
+     tags: [veg, staple], aliases: [atta, wheat flour, godhuma pindi, గోధుమ పిండి], note_en: "for chapati", note_te: "చపాతీకి"}
+  - {sku: rava, en: semolina, te: బొంబాయి రవ్వ, cat: grocery, unit: kg, price: 50, stock: 60, step: 0.5, group: flour, seller: Kakinada,
+     tags: [veg, staple], aliases: [rava, sooji, semolina, upma rava, బొంబాయి రవ్వ, రవ్వ], note_en: "for upma", note_te: "ఉప్మాకి"}
+  # --- oils --------------------------------------------------------------------------------------------------
+  - {sku: verusenaga-nune, en: groundnut oil, te: వేరుశనగ నూనె, cat: grocery, unit: litre, price: 190, stock: 60, step: 0.5, group: oil, seller: Kakinada,
+     tags: [veg, staple], aliases: [groundnut oil, peanut oil, verusenaga nune, వేరుశనగ నూనె, పల్లీ నూనె, oil, nune, నూనె], note_en: "for frying and curry", note_te: "వేపుడుకి, కూరకి"}
+  - {sku: sunflower-nune, en: sunflower oil, te: సన్‌ఫ్లవర్ నూనె, cat: grocery, unit: litre, price: 150, stock: 60, step: 0.5, group: oil, seller: Kakinada,
+     tags: [veg, staple, budget], aliases: [sunflower oil, refined oil, సన్‌ఫ్లవర్ నూనె, సన్ ఫ్లవర్ నూనె], note_en: "light and cheap", note_te: "తేలిక, ధర తక్కువ"}
+  - {sku: nuvvula-nune, en: sesame oil, te: నువ్వుల నూనె, cat: festival, unit: litre, price: 380, stock: 30, step: 0.5, group: oil, seller: Kakinada,
+     tags: [veg, staple, festival], aliases: [sesame oil, gingelly oil, nuvvula nune, నువ్వుల నూనె], note_en: "for cooking and for lamps", note_te: "వంటకి, దీపాలకి"}
+  - {sku: neyyi, en: ghee, te: నెయ్యి, cat: festival, unit: litre, price: 640, stock: 25, step: 0.5, group: ghee, seller: Kakinada,
+     tags: [veg, staple, festival], aliases: [ghee, neyyi, nei, నెయ్యి], note_en: "for sweets and lamps", note_te: "స్వీట్లకి, దీపాలకి"}
+  # --- spices and pantry -------------------------------------------------------------------------------------
+  - {sku: karam, en: chilli powder, te: కారం, cat: pantry, unit: pack, price: 70, stock: 50, group: spice, seller: Kakinada,
+     tags: [veg, spice], aliases: [chilli powder, chili powder, red chilli powder, karam, karam podi, కారం, కారం పొడి], note_en: "200 gram pack", note_te: "రెండు వందల గ్రాములు"}
+  - {sku: pasupu, en: turmeric, te: పసుపు, cat: pantry, unit: pack, price: 35, stock: 50, group: spice, seller: Kakinada,
+     tags: [veg, spice], aliases: [turmeric, haldi, pasupu, పసుపు], note_en: "100 gram pack", note_te: "వంద గ్రాములు"}
+  - {sku: dhaniyalu, en: coriander powder, te: ధనియాల పొడి, cat: pantry, unit: pack, price: 40, stock: 50, group: spice, seller: Kakinada,
+     tags: [veg, spice], aliases: [coriander powder, dhaniya powder, dhaniyala podi, ధనియాల పొడి], note_en: "100 gram pack", note_te: "వంద గ్రాములు"}
+  - {sku: garam-masala, en: garam masala, te: గరం మసాలా, cat: pantry, unit: pack, price: 55, stock: 50, group: spice, seller: Kakinada,
+     tags: [veg, spice], aliases: [garam masala, masala, గరం మసాలా, మసాలా], note_en: "50 gram pack", note_te: "యాభై గ్రాములు"}
+  - {sku: jeelakarra, en: cumin seeds, te: జీలకర్ర, cat: pantry, unit: pack, price: 60, stock: 40, group: spice, seller: Kakinada,
+     tags: [veg, spice], aliases: [cumin, jeera, jeelakarra, జీలకర్ర], note_en: "100 gram pack", note_te: "వంద గ్రాములు"}
+  - {sku: avalu, en: mustard seeds, te: ఆవాలు, cat: pantry, unit: pack, price: 25, stock: 40, group: spice, seller: Kakinada,
+     tags: [veg, spice], aliases: [mustard, mustard seeds, avalu, aavalu, ఆవాలు], note_en: "100 gram pack", note_te: "వంద గ్రాములు"}
+  - {sku: uppu, en: salt, te: ఉప్పు, cat: pantry, unit: pack, price: 25, stock: 60, group: pantry, seller: Vodarevu,
+     tags: [veg, staple], aliases: [salt, uppu, ఉప్పు], note_en: "1 kilo pack", note_te: "ఒక కిలో ప్యాకెట్"}
+  - {sku: chakkera, en: sugar, te: చక్కెర, cat: pantry, unit: kg, price: 46, stock: 60, step: 0.5, group: sweetener, seller: Kakinada,
+     tags: [veg, staple], aliases: [sugar, chakkera, panchadara, చక్కెర, పంచదార], note_en: "refined sugar", note_te: "తెల్ల చక్కెర"}
+  - {sku: bellam, en: jaggery, te: బెల్లం, cat: pantry, unit: kg, price: 70, stock: 40, step: 0.5, group: sweetener, seller: Kakinada,
+     tags: [veg, staple, festival], aliases: [jaggery, bellam, gur, బెల్లం], note_en: "for sweets", note_te: "స్వీట్లకి"}
+  - {sku: chintapandu, en: tamarind, te: చింతపండు, cat: pantry, unit: kg, price: 180, stock: 30, group: pantry, seller: Kakinada,
+     tags: [veg, staple], aliases: [tamarind, imli, chintapandu, చింతపండు], note_en: "for pulusu", note_te: "పులుసుకి"}
+  - {sku: allam-vellulli, en: ginger garlic paste, te: అల్లం వెల్లుల్లి పేస్ట్, cat: pantry, unit: pack, price: 45, stock: 40, group: pantry, seller: Kakinada,
+     tags: [veg, spice], aliases: [ginger garlic paste, allam vellulli, అల్లం వెల్లుల్లి పేస్ట్, అల్లం వెల్లుల్లి], note_en: "200 gram pack", note_te: "రెండు వందల గ్రాములు"}
+  # --- vegetables and herbs ----------------------------------------------------------------------------------
+  - {sku: ullipayalu, en: onions, te: ఉల్లిపాయలు, cat: vegetable, unit: kg, price: 38, stock: 150, group: veg-base, seller: Kakinada,
+     tags: [veg, staple, curry], aliases: [onion, onions, ullipayalu, ullipaya, ullipaayalu, ఉల్లిపాయలు, ఉల్లిపాయ, ఉల్లి], note_en: "red onions", note_te: "ఎర్ర ఉల్లి"}
+  - {sku: tomato, en: tomatoes, te: టమాటాలు, cat: vegetable, unit: kg, price: 32, stock: 120, group: veg-base, seller: Kakinada,
+     tags: [veg, staple, curry], aliases: [tomato, tomatoes, tamata, tamatalu, టమాటాలు, టమాటా, టమోటా, టమోటాలు], note_en: "country tomatoes", note_te: "నాటు టమాటాలు"}
+  - {sku: bangaladumpa, en: potatoes, te: బంగాళాదుంపలు, cat: vegetable, unit: kg, price: 34, stock: 120, group: vegetable, seller: Kakinada,
+     tags: [veg, staple, curry, fry], aliases: [potato, potatoes, aloo, alugadda, aloogadda, bangaladumpa, బంగాళాదుంపలు, బంగాళాదుంప, ఆలుగడ్డ, ఆలుగడ్డలు], note_en: "all-purpose", note_te: "అన్నింటికీ"}
+  - {sku: pachimirchi, en: green chillies, te: పచ్చిమిర్చి, cat: vegetable, unit: kg, price: 70, stock: 40, group: veg-base, seller: Kakinada,
+     tags: [veg, staple, spice], aliases: [green chilli, green chillies, green chili, pachimirchi, mirchi, పచ్చిమిర్చి, పచ్చి మిర్చి, మిర్చి], note_en: "hot", note_te: "కారంగా ఉంటాయి"}
+  - {sku: vankaya, en: brinjal, te: వంకాయలు, cat: vegetable, unit: kg, price: 44, stock: 60, group: vegetable, seller: Kakinada,
+     tags: [veg, curry], aliases: [brinjal, eggplant, aubergine, vankaya, vankayalu, వంకాయలు, వంకాయ], note_en: "small purple", note_te: "చిన్న వంకాయలు"}
+  - {sku: bendakaya, en: okra, te: బెండకాయలు, cat: vegetable, unit: kg, price: 52, stock: 50, group: vegetable, seller: Kakinada,
+     tags: [veg, curry, fry], aliases: [okra, ladies finger, ladyfinger, bhindi, bendakaya, bendakayalu, బెండకాయలు, బెండకాయ], note_en: "tender", note_te: "లేతగా ఉన్నాయి"}
+  - {sku: munagakaya, en: drumsticks, te: మునగకాయలు, cat: vegetable, unit: kg, price: 90, stock: 30, group: vegetable, seller: Kakinada,
+     tags: [veg, curry], aliases: [drumstick, drumsticks, munagakaya, munakkaya, మునగకాయలు, మునగకాయ, ములక్కాడ, ములక్కాయలు], note_en: "for sambar and pulusu", note_te: "సాంబారుకి, పులుసుకి"}
+  - {sku: sorakaya, en: bottle gourd, te: సొరకాయ, cat: vegetable, unit: kg, price: 36, stock: 40, group: vegetable, seller: Kakinada,
+     tags: [veg, curry], aliases: [bottle gourd, sorakaya, lauki, సొరకాయ, ఆనపకాయ], note_en: "light curry vegetable", note_te: "తేలిక కూర"}
+  - {sku: beerakaya, en: ridge gourd, te: బీరకాయ, cat: vegetable, unit: kg, price: 48, stock: 40, group: vegetable, seller: Kakinada,
+     tags: [veg, curry], aliases: [ridge gourd, beerakaya, turai, బీరకాయ], note_en: "tender", note_te: "లేతగా ఉంది"}
+  - {sku: carrot, en: carrots, te: క్యారెట్, cat: vegetable, unit: kg, price: 58, stock: 50, group: vegetable, seller: Kakinada,
+     tags: [veg, curry], aliases: [carrot, carrots, క్యారెట్, క్యారెట్లు], note_en: "sweet", note_te: "తీపి"}
+  - {sku: cabbage, en: cabbage, te: క్యాబేజీ, cat: vegetable, unit: kg, price: 30, stock: 50, group: vegetable, seller: Kakinada,
+     tags: [veg, curry, budget], aliases: [cabbage, క్యాబేజీ, క్యాబేజి], note_en: "fresh", note_te: "తాజా"}
+  - {sku: dosakaya, en: cucumber, te: దోసకాయ, cat: vegetable, unit: kg, price: 36, stock: 40, group: vegetable, seller: Kakinada,
+     tags: [veg], aliases: [cucumber, dosakaya, దోసకాయ, కీర], note_en: "for pappu or salad", note_te: "పప్పుకి, సలాడ్‌కి"}
+  - {sku: arati-kaya, en: raw banana, te: అరటికాయ, cat: vegetable, unit: kg, price: 40, stock: 30, group: vegetable, seller: Kakinada,
+     tags: [veg, curry, fry], aliases: [raw banana, plantain, arati kaya, aratikaya, అరటికాయ, అరటికాయలు], note_en: "for fry", note_te: "వేపుడుకి"}
+  - {sku: allam, en: ginger, te: అల్లం, cat: vegetable, unit: kg, price: 120, stock: 20, group: veg-base, seller: Kakinada,
+     tags: [veg, spice], aliases: [ginger, allam, adrak, అల్లం], note_en: "fresh", note_te: "తాజా"}
+  - {sku: vellulli, en: garlic, te: వెల్లుల్లి, cat: vegetable, unit: kg, price: 240, stock: 20, group: veg-base, seller: Kakinada,
+     tags: [veg, spice], aliases: [garlic, vellulli, lehsun, వెల్లుల్లి], note_en: "fresh", note_te: "తాజా"}
+  - {sku: nimmakaya, en: lemons, te: నిమ్మకాయలు, cat: vegetable, unit: piece, price: 5, stock: 200, group: veg-base, seller: Kakinada,
+     tags: [veg], aliases: [lemon, lemons, lime, nimmakaya, నిమ్మకాయలు, నిమ్మకాయ], note_en: "juicy", note_te: "రసం ఎక్కువ"}
+  - {sku: kobbari-kaya, en: coconuts, te: కొబ్బరికాయలు, cat: vegetable, unit: piece, price: 35, stock: 80, group: pooja, seller: Uppada,
+     tags: [veg, festival], aliases: [coconut, coconuts, kobbari kaya, kobbarikaya, కొబ్బరికాయలు, కొబ్బరికాయ, టెంకాయ], note_en: "for curry or pooja", note_te: "కూరకి, పూజకి"}
+  - {sku: kottimeera, en: coriander leaves, te: కొత్తిమీర, cat: vegetable, unit: bunch, price: 15, stock: 60, group: herb, seller: Kakinada,
+     tags: [veg, herb], aliases: [coriander, coriander leaves, cilantro, kottimeera, kothimeera, కొత్తిమీర], note_en: "fresh bunch", note_te: "తాజా కట్ట"}
+  - {sku: karivepaku, en: curry leaves, te: కరివేపాకు, cat: vegetable, unit: bunch, price: 10, stock: 60, group: herb, seller: Kakinada,
+     tags: [veg, herb], aliases: [curry leaves, karivepaku, కరివేపాకు], note_en: "fresh bunch", note_te: "తాజా కట్ట"}
+  - {sku: pudina, en: mint, te: పుదీనా, cat: vegetable, unit: bunch, price: 15, stock: 40, group: herb, seller: Kakinada,
+     tags: [veg, herb, biryani], aliases: [mint, pudina, పుదీనా], note_en: "fresh bunch", note_te: "తాజా కట్ట"}
+  - {sku: palakura, en: spinach, te: పాలకూర, cat: vegetable, unit: bunch, price: 15, stock: 40, group: greens, seller: Kakinada,
+     tags: [veg, curry], aliases: [spinach, palak, palakura, పాలకూర], note_en: "fresh bunch", note_te: "తాజా కట్ట"}
+  - {sku: gongura, en: gongura, te: గోంగూర, cat: vegetable, unit: bunch, price: 15, stock: 40, group: greens, seller: Kakinada,
+     tags: [veg, curry], aliases: [gongura, sorrel, గోంగూర], note_en: "sour leaves", note_te: "పుల్లని ఆకు"}
+  # --- fruit and dairy ---------------------------------------------------------------------------------------
+  - {sku: arati-pandu, en: bananas, te: అరటిపండ్లు, cat: fruit, unit: dozen, price: 60, stock: 40, step: 0.5, group: fruit, seller: Kakinada,
+     tags: [veg, festival], aliases: [banana, bananas, arati pandu, aratipandu, అరటిపండ్లు, అరటిపండు, అరటి పండ్లు], note_en: "ripe", note_te: "పండినవి"}
+  - {sku: usiri, en: amla, te: ఉసిరికాయలు, cat: festival, unit: kg, price: 120, stock: 20, group: fruit, seller: Kakinada,
+     tags: [veg, festival], aliases: [amla, gooseberry, usiri, usirikaya, ఉసిరికాయలు, ఉసిరి, ఉసిరికాయ], note_en: "for Karthika lamps and pickle", note_te: "కార్తీక దీపాలకి, పచ్చడికి"}
+  - {sku: palu, en: milk, te: పాలు, cat: dairy, unit: litre, price: 66, stock: 80, step: 0.5, group: dairy, seller: Kakinada,
+     tags: [veg, staple], aliases: [milk, palu, paalu, పాలు], note_en: "full cream", note_te: "చిక్కటి పాలు"}
+  - {sku: perugu, en: curd, te: పెరుగు, cat: dairy, unit: pack, price: 40, stock: 50, group: dairy, seller: Kakinada,
+     tags: [veg, staple], aliases: [curd, yogurt, yoghurt, dahi, perugu, పెరుగు], note_en: "500 gram pack", note_te: "అర కిలో ప్యాకెట్"}
+  - {sku: paneer, en: paneer, te: పనీర్, cat: dairy, unit: pack, price: 110, stock: 25, group: dairy, seller: Kakinada,
+     tags: [veg, curry], aliases: [paneer, పనీర్], note_en: "200 gram pack", note_te: "రెండు వందల గ్రాములు"}
+  # --- the festival shelf: Deepavali and Karthika ------------------------------------------------------------
+  - {sku: pramidalu, en: clay lamps, te: ప్రమిదలు, cat: festival, unit: dozen, price: 60, stock: 60, group: pooja, seller: Uppada,
+     tags: [veg, festival, non-food], aliases: [clay lamps, diya, diyas, deepam, pramidalu, ప్రమిదలు, ప్రమిద, దీపాలు], note_en: "for Deepavali and Karthika", note_te: "దీపావళికి, కార్తీకానికి"}
+  - {sku: vattulu, en: cotton wicks, te: వత్తులు, cat: festival, unit: pack, price: 20, stock: 80, group: pooja, seller: Uppada,
+     tags: [veg, festival, non-food], aliases: [wicks, cotton wicks, lamp wicks, vattulu, వత్తులు, దీపం వత్తులు], note_en: "pack of 100", note_te: "వంద వత్తులు"}
+  - {sku: karpuram, en: camphor, te: కర్పూరం, cat: festival, unit: pack, price: 40, stock: 60, group: pooja, seller: Uppada,
+     tags: [veg, festival, non-food], aliases: [camphor, karpuram, కర్పూరం], note_en: "small pack", note_te: "చిన్న ప్యాకెట్"}
+  - {sku: agarbatti, en: incense sticks, te: అగరబత్తీలు, cat: festival, unit: pack, price: 35, stock: 60, group: pooja, seller: Uppada,
+     tags: [veg, festival, non-food], aliases: [incense, incense sticks, agarbatti, agarbathi, అగరబత్తీలు, అగరుబత్తీలు], note_en: "sandal scent", note_te: "చందనం వాసన"}
+  - {sku: banthi-poolu, en: marigold flowers, te: బంతిపూలు, cat: festival, unit: bunch, price: 40, stock: 40, group: pooja, seller: Uppada,
+     tags: [veg, festival, non-food], aliases: [marigold, marigolds, flowers, banthi poolu, బంతిపూలు, బంతి పూలు, పూలు], note_en: "a garland's worth", note_te: "ఒక దండకి సరిపడా"}
+  - {sku: mithai, en: sweet box, te: స్వీట్ బాక్స్, cat: festival, unit: pack, price: 350, stock: 30, group: sweets, seller: Kakinada,
+     tags: [veg, festival], aliases: [sweets, sweet box, mithai, స్వీట్లు, స్వీట్ బాక్స్, మిఠాయి], note_en: "half a kilo of assorted sweets", note_te: "అర కిలో రకరకాల స్వీట్లు"}
+
+# Dishes the shop can build a basket for. `for` is how many people the quantities feed.
+recipes:
+  - {id: chepala-pulusu, en: fish pulusu, te: చేపల పులుసు, diet: non-veg, for: 4,
+     aliases: [chepala pulusu, fish pulusu, fish curry, chepa pulusu, చేపల పులుసు, చేప పులుసు, చేపల కూర],
+     main: {group: [river-fish, big-sea-fish, small-sea-fish], qty: 1.0},
+     items: [{sku: chintapandu, qty: 0.25}, {sku: ullipayalu, qty: 0.5}, {sku: tomato, qty: 0.25}, {sku: pachimirchi, qty: 0.25},
+             {sku: karam, qty: 1}, {sku: pasupu, qty: 1}, {sku: karivepaku, qty: 1}, {sku: verusenaga-nune, qty: 0.5}]}
+  - {id: royyala-iguru, en: prawn iguru, te: రొయ్యల ఇగురు, diet: non-veg, for: 4,
+     aliases: [royyala iguru, prawn curry, prawn iguru, prawns curry, royyala kura, రొయ్యల ఇగురు, రొయ్యల కూర],
+     main: {sku: royyalu, qty: 0.75},
+     items: [{sku: ullipayalu, qty: 0.5}, {sku: tomato, qty: 0.25}, {sku: allam-vellulli, qty: 1}, {sku: karam, qty: 1},
+             {sku: garam-masala, qty: 1}, {sku: karivepaku, qty: 1}, {sku: verusenaga-nune, qty: 0.5}]}
+  - {id: fish-fry, en: fish fry, te: చేపల వేపుడు, diet: non-veg, for: 4,
+     aliases: [fish fry, chepala vepudu, చేపల వేపుడు, చేప వేపుడు],
+     main: {group: [big-sea-fish, small-sea-fish], qty: 1.0},
+     items: [{sku: karam, qty: 1}, {sku: pasupu, qty: 1}, {sku: nimmakaya, qty: 2}, {sku: allam-vellulli, qty: 1}, {sku: verusenaga-nune, qty: 0.5}]}
+  - {id: kodi-kura, en: chicken curry, te: చికెన్ కూర, diet: non-veg, for: 4,
+     aliases: [chicken curry, kodi kura, చికెన్ కూర, కోడి కూర],
+     main: {sku: chicken, qty: 1.0},
+     items: [{sku: ullipayalu, qty: 0.5}, {sku: tomato, qty: 0.25}, {sku: allam-vellulli, qty: 1}, {sku: karam, qty: 1},
+             {sku: garam-masala, qty: 1}, {sku: verusenaga-nune, qty: 0.5}]}
+  - {id: tomato-pappu, en: tomato pappu, te: టమాటా పప్పు, diet: veg, for: 4,
+     aliases: [tomato pappu, tomato dal, dal, pappu, టమాటా పప్పు, పప్పు],
+     main: {sku: kandi-pappu, qty: 0.5},
+     items: [{sku: tomato, qty: 0.5}, {sku: pachimirchi, qty: 0.25}, {sku: pasupu, qty: 1}, {sku: avalu, qty: 1}, {sku: karivepaku, qty: 1}]}
+  - {id: gongura-pappu, en: gongura pappu, te: గోంగూర పప్పు, diet: veg, for: 4,
+     aliases: [gongura pappu, gongura dal, గోంగూర పప్పు],
+     main: {sku: kandi-pappu, qty: 0.5},
+     items: [{sku: gongura, qty: 2}, {sku: pachimirchi, qty: 0.25}, {sku: pasupu, qty: 1}, {sku: avalu, qty: 1}]}
+  - {id: sambar, en: sambar, te: సాంబారు, diet: veg, for: 4,
+     aliases: [sambar, sambaru, సాంబారు, సాంబార్],
+     main: {sku: kandi-pappu, qty: 0.5},
+     items: [{sku: munagakaya, qty: 0.25}, {sku: tomato, qty: 0.25}, {sku: ullipayalu, qty: 0.25}, {sku: chintapandu, qty: 0.25}, {sku: karam, qty: 1}]}
+  - {id: vankaya-kura, en: brinjal curry, te: వంకాయ కూర, diet: veg, for: 4,
+     aliases: [brinjal curry, vankaya kura, gutti vankaya, వంకాయ కూర, గుత్తి వంకాయ],
+     main: {sku: vankaya, qty: 0.5},
+     items: [{sku: ullipayalu, qty: 0.25}, {sku: tomato, qty: 0.25}, {sku: karam, qty: 1}, {sku: verusenaga-nune, qty: 0.5}]}
+  - {id: pulihora, en: pulihora, te: పులిహోర, diet: veg, for: 4,
+     aliases: [pulihora, tamarind rice, పులిహోర],
+     main: {sku: sona-masuri, qty: 1},
+     items: [{sku: chintapandu, qty: 0.25}, {sku: pasupu, qty: 1}, {sku: avalu, qty: 1}, {sku: karivepaku, qty: 1}, {sku: verusenaga-nune, qty: 0.5}]}
+  - {id: biryani, en: chicken biryani, te: చికెన్ బిర్యానీ, diet: non-veg, for: 4,
+     aliases: [biryani, chicken biryani, బిర్యానీ, చికెన్ బిర్యానీ],
+     main: {sku: chicken, qty: 1.0},
+     items: [{sku: basmati, qty: 1}, {sku: ullipayalu, qty: 0.5}, {sku: perugu, qty: 1}, {sku: garam-masala, qty: 1}, {sku: pudina, qty: 1}, {sku: allam-vellulli, qty: 1}]}

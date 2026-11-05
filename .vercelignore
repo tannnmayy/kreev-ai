@@ -1,0 +1,15 @@
+.venv
+.tools
+.claude
+ala
+tests
+docs
+scenarios
+reports
+traces
+data
+uv.lock
+pyproject.toml
+Dockerfile
+docker-compose.yml
+clips

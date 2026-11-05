@@ -1,0 +1,14 @@
+.venv
+.git
+.tools
+.claude
+.env
+.env.local
+.pytest_cache
+__pycache__
+*.pyc
+data
+traces
+reports/live
+docs/brief
+node_modules

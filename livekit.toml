@@ -1,0 +1,6 @@
+# Filled in by `lk agent create`. See README.md, "Deploy for free".
+[project]
+  subdomain = ""
+
+[agent]
+  id = ""
